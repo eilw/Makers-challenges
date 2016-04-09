@@ -1,0 +1,21 @@
+# DO NOT SPEND MORE THAN 30-40 MINUTES STRUGGLING THROUGH THIS BEFORE MOVING ON!
+
+# Print to stdout, each element in a hash based linked list, in reverse.
+# If you don't know what that is, go check out the previous problem.
+#
+# EXAMPLES:
+# head = {:data => 1, :next => nil}
+# head = {:data => 2, :next => head}
+#
+# print_list_in_reverse head   # >> "1\n2\n"
+
+def print_list_in_reverse(linked)
+  str = ""
+  str = rec(linked, str)
+  $stdout.write str
+end
+
+def rec(linked,str)
+  str = linked[:data].to_s + "\n" + str
+  linked[:next] != nil ? rec(linked[:next],str) : str
+end
